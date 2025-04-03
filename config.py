@@ -1,6 +1,8 @@
 import os
+from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'keepyoursecrets'
@@ -14,7 +16,6 @@ class Config:
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['your-email@foo.com']
-
     POSTS_PER_PAGE = 15
     LANGUAGES = ['en', 'es']
     #MS_TRANSLATOR_KEY = os.environ.get('MS_TRANS_KEY')
